@@ -147,7 +147,7 @@
                 </div>
                 <!-- End .project -->
 
-                <div class="project shadow-large">
+                <div class="project shadow-large hidden">
                     <div class="project-image">
                         <img src="images/weathernowproject.png" />
                     </div>
@@ -162,6 +162,25 @@
                     <!-- End .project-info -->
                 </div>
                 <!-- End .project -->
+
+                <div class="project shadow-large hidden">
+                    <div class="project-image">
+                        <img src="images/sonoshift.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>SonoShift - Noise Cancellation in Audio</h3>
+                        <p>
+                            Noise interference is a persistent issue in video and audio applications, affecting recording, telecommunication, and speech recognition. Our project, SonoShift, aims to develop a noise cancellation system using artificial intelligence and machine learning (AIML). This system analyzes audio data to efficiently remove unwanted noise, providing clear and enhanced audio output.
+                        </p>
+                        <!-- <a href="#">View Project</a> -->
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <button id="view-more">View More</button>
+                <button id="collapse" class="hidden">View Less</button>
             </div>
         </div>
     </div>
@@ -237,6 +256,29 @@
     </footer>
     <!-- End footer -->
 
+    <script>
+        document.getElementById('view-more').addEventListener('click', function() {
+            const hiddenProjects = document.querySelectorAll('.project.hidden');
+            hiddenProjects.forEach(project => {
+                project.classList.remove('hidden');
+            });
+            this.classList.add('hidden');
+            document.getElementById('collapse').classList.remove('hidden');
+        });
+
+        document.getElementById('collapse').addEventListener('click', function() {
+            const allProjects = document.querySelectorAll('.project');
+            allProjects.forEach((project, index) => {
+                if (index >= 2) {
+                    project.classList.add('hidden');
+                }
+            });
+            this.classList.add('hidden');
+            document.getElementById('view-more').classList.remove('hidden');
+        });
+
+
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
 </body>

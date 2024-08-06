@@ -688,6 +688,27 @@ footer {
     display: none;
 }
 
+.project {
+    &.hidden {
+        display: none;
+    }
+}
+
+button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+
+
 /*
     -------------------------------
     ----- 9. Skills Styles -----
