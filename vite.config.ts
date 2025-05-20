@@ -11,12 +11,23 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  base: "/<repo-name>/", // Replace with your GitHub repository name
+  build: {
+    outDir: "dist", // Default output directory
+    assetsDir: "assets", // Default assets directory
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name].[hash].js`,
+        chunkFileNames: `assets/[name].[hash].js`,
+        assetFileNames: `assets/[name].[hash][extname]`,
+      },
     },
   },
 }));
